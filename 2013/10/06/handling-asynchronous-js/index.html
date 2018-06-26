@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://RichSuperMan.github.io">
-  <title>相册 | Litten的博客</title>
+  <title>统一处理异步的js回调 | Litten的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://RichSuperMan.github.io/photos/index.html">
+  <meta name="description" content="js编程时经常会用到异步处理，而异步会带了所谓的并发问题。比如，你需要向服务器发出多个ajax请求，然后在返回所有结果后做进一步处理，同时要显示动画。因此我们需要用到以下的方案。">
+<meta name="keywords" content="js,web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统一处理异步的js回调">
+<meta property="og:url" content="https://RichSuperMan.github.io/2013/10/06/handling-asynchronous-js/index.html">
 <meta property="og:site_name" content="Litten的博客">
-<meta property="og:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta property="og:description" content="js编程时经常会用到异步处理，而异步会带了所谓的并发问题。比如，你需要向服务器发出多个ajax请求，然后在返回所有结果后做进一步处理，同时要显示动画。因此我们需要用到以下的方案。">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-07-28T03:51:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta name="twitter:title" content="统一处理异步的js回调">
+<meta name="twitter:description" content="js编程时经常会用到异步处理，而异步会带了所谓的并发问题。比如，你需要向服务器发出多个ajax请求，然后在返回所有结果后做进一步处理，同时要显示动画。因此我们需要用到以下的方案。">
   
     <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
   
@@ -163,42 +163,34 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-handling-asynchronous-js" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      统一处理异步的js回调
     </h1>
   
 
+        
+        <a href="/2013/10/06/handling-asynchronous-js/" class="archive-article-date">
+  	<time datetime="2013-10-06T02:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2013-10-06</time>
+</a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Ins</a>
-	<a class="photos-btn" target="_blank" href="http://litten.me/gallery/">摄影</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+        <p>js编程时经常会用到异步处理，而异步会带了所谓的并发问题。比如，你需要向服务器发出多个ajax请求，然后在返回所有结果后做进一步处理，同时要显示动画。因此我们需要用到以下的方案。<br><a id="more"></a></p>
+<p>###<strong>【定义函数】</strong><br>定义Batch函数。参数为函数组成的数组functions，这里面的函数将稍后执行，以及这些函数完成后的回调completionHandler。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Batch</span>(<span class="params">functions, completionHandler</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>._functions = functions;</span><br><span class="line">	<span class="keyword">this</span>._completionHandler = completionHandler;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###<strong>【启动请求】</strong><br>用this._remaining来记录未执行的函数量，然后执行各个函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Batch.prototype.execute = <span class="function"><span class="keyword">function</span> <span class="title">execute</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> i;</span><br><span class="line">  	<span class="keyword">var</span> functions = <span class="keyword">this</span>._functions;</span><br><span class="line">  	<span class="keyword">var</span> length = <span class="keyword">this</span>._remaining = functions.length;</span><br><span class="line">  	<span class="keyword">this</span>._results = [];</span><br><span class="line">  	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; length; i += <span class="number">1</span>) &#123;</span><br><span class="line">      	functions[i](<span class="keyword">this</span>);</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>###<strong>【让Batch知道函数完成】</strong><br>用this._results来记录执行结果，当this._remaining为0时，表示所有函数已执行完毕。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Batch.prototype.done = <span class="function"><span class="keyword">function</span> <span class="title">done</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>._remaining -= <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span>(result) !== <span class="string">'undefined'</span>) &#123;</span><br><span class="line">    	<span class="keyword">this</span>._results.push(result);</span><br><span class="line">  	&#125;</span><br><span class="line">  	<span class="keyword">if</span> (<span class="keyword">this</span>._remaining === <span class="number">0</span>) &#123;</span><br><span class="line">      	<span class="keyword">this</span>._completionHandler(<span class="keyword">this</span>._results);</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>到这里，就完成了Batch这个函数的简单功能了。</p>
+<p>###<strong>【使用】</strong><br>将Batch应用到实际上。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> urls = [</span><br><span class="line">  	<span class="string">'/api/gists/1000'</span>,</span><br><span class="line">  	<span class="string">'/api/gists/1001'</span>,</span><br><span class="line">  	<span class="string">'/api/gists/1002'</span>,</span><br><span class="line">  	<span class="string">'/api/gists/1003'</span>,</span><br><span class="line">  	<span class="string">'/api/gists/1004'</span>,</span><br><span class="line">  	<span class="comment">// ...</span></span><br><span class="line">  	<span class="string">'/api/gists/1337'</span>,</span><br><span class="line">  	<span class="comment">// etc...</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">var</span> length = urls.length;</span><br><span class="line"><span class="keyword">var</span> batchFunctions = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建需要被batch执行的函数数组</span></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; length; i += <span class="number">1</span>) &#123;</span><br><span class="line">  	batchFunctions.push(<span class="function"><span class="keyword">function</span> (<span class="params">batch</span>) </span>&#123;</span><br><span class="line">      	$.ajax.get(urls[i], <span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">          	batch.done(response);</span><br><span class="line">      	&#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myBatch = <span class="keyword">new</span> Batch(batchFunctions, <span class="function"><span class="keyword">function</span> (<span class="params">results</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//返回各个函数的结果数组</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">myBatch.execute(); <span class="comment">// 开始执行</span></span><br></pre></td></tr></table></figure></p>
+<p>这样的方案其实是参考了“观察者”模式。相关源码推荐nodeJs的Async.js库。</p>
+<p>THE END.</p>
 
       
 
@@ -207,6 +199,21 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +264,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzUlEQVR42u3aS27DMAwFQN//0u42QGrnUZQUIxitCseQRl0Q5uc44nW+rNcn7+9c/Xq157Fi4eLitrnn7bp6J0HfX+N+//ezcHFx93PvA031nStKZ39cXNwnc5ODk1CIi4v7q9x71uMCGS4ubpFbDTQfUpRg5+W5Gi4uboObVynX/b2kvouLizvEPYsrL4zmzwun4+LibuFWG6LJBfJUqnouLi7uTm5e9Bwb1EguX02rcHFx13Hzz5QkKcoTp/zJP19kuLi4i7nJ8cmnTHL82DU+/FNwcXGXcfPgVR2n6A9oDuZquLi4De7c5kdOrxZSJ/RzcHFxa1WI8jhFXkbpBLuoYIqLi7uFmxyft0bG2qhR+oSLi7uFWw1JnXSolavh4uJu5OYpSt5G7QxsFUIYLi7uAu7YR8wYqPqkVcvBxcWdxM1DW791mrdVcHFxn8bNx7DyZm1r2AsXF3cxt1/QTJ5Xy7JH3sXFxcVdwK0Gl04ttpM+lS+Di4vb5lbTj6S0WqUk++Pi4u7n5i2NWUMVeRumXBbBxcX9EncsGOXjGq0qDi4u7nZu9c2xcHYpxMXF3cidNXBZDWp5uoWLi7uTO6FPGxc7xsqvuLi4G7l/C47iMXIsAkQAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3a0W4bMQwEQP//T7evAdrYu6TkGO3cU3DxnTQyIMokH4/4+vXl+u7O1/vPn/rzv/n9x40LDw8PbzH1ZMj82XYJklHyOePh4eHd5n23o373mYT6fGnyQJIHCTw8PLxP5j0fPjkE50dkPDw8vH+Jd+O3fzIHPDw8vE/gJRNKgsGNFO2bci14eHh4MS/f7j/n7yv1PTw8PLz18TcPEm0wmBXM6jfg4eHhXeDlG25+eM2Xpk3ptvPEw8PDu8c7df6cLc2mBaEovOHh4eEd4uXtUO2dtpkgTxwXoQIPDw/vAi+hto0FeTJiU+7KFxQPDw/vBu/wOsWLdaqloK7d4eHh4S14eVp21vw0Cyp56qGu7+Hh4eEd4rWbfp6emDUWzMLA6jCNh4eHtzh/5qnVTZk/WZR2LDw8PLyf4uVl+xaTpBtmpbjoC8DDw8M7xGtboNow0Bb783aBaMnw8PDwrvHarT8ZuC2z5eGhCE54eHh4b+G1mDxNsDkuJ+C/fBIPDw/vAm+Wt5iVyobp19Ehvv4O8fDw8Ea82Y//9no+4qzF6oUCDw8P7yhvvzW3ZbP24L5pR8DDw8O73c+Zh4E2tZo/2y5QfcTHw8PDO8RLUrT7NO4suZCneqNcCx4eHt4hXlLm3wBmSYpZeQwPDw/vPbzZFDf3n090zz7wDeDh4eEFvFmC4OzUZ4wXT+Hh4eFd5uWvKAZYNGy1xblVGhcPDw8v+PymZWpWyjobQl4sHB4eHt4F3r7FavaGTVBpE814eHh4N3htMDhQYYuXoA0M9cEaDw8Pb8HbbMSb8tU+ar1IpuDh4eF9GG+T3s1heaNAlKXGw8PDezvv7MadJzjyRDMeHh7ee3iz4lM+9bMJ32KB8PDw8C7wzm7uechpExzJmx+3YxceHt7/zvsNkHymS+L3SXsAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,6 +276,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2013/11/07/something-about-immersion/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          谈谈人为何会沉迷游戏？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/09/25/web-worker-learning/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">web worker简易入门</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -287,6 +313,23 @@ var _hmt = _hmt || [];
 </aside>
 
 
+
+  
+  
+  
+
+  
+  <div id="SOHUCS" sid="handling-asynchronous-js" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -309,7 +352,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

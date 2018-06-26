@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://RichSuperMan.github.io">
-  <title>相册 | Litten的博客</title>
+  <title>Litten的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+  <meta name="description" content="*{ 	margin:0; 	padding: 0; } body{ 	overflow: hidden; } #textBox{ 	position: absolute; 	left: 0; 	top: 0; 	z-index: -999; } .showRoll #frame {     border-color: hsl(0,0%,70%);     position: abs">
 <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
 <meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://RichSuperMan.github.io/photos/index.html">
+<meta property="og:title" content="Litten的博客">
+<meta property="og:url" content="https://RichSuperMan.github.io/assets/demo/pre_css3_demo/demo.html">
 <meta property="og:site_name" content="Litten的博客">
-<meta property="og:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta property="og:description" content="*{ 	margin:0; 	padding: 0; } body{ 	overflow: hidden; } #textBox{ 	position: absolute; 	left: 0; 	top: 0; 	z-index: -999; } .showRoll #frame {     border-color: hsl(0,0%,70%);     position: abs">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-07-28T03:51:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta name="twitter:title" content="Litten的博客">
+<meta name="twitter:description" content="*{ 	margin:0; 	padding: 0; } body{ 	overflow: hidden; } #textBox{ 	position: absolute; 	left: 0; 	top: 0; 	z-index: -999; } .showRoll #frame {     border-color: hsl(0,0%,70%);     position: abs">
   
     <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
   
@@ -163,43 +163,260 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      相册
-    </h1>
-  
-
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Ins</a>
-	<a class="photos-btn" target="_blank" href="http://litten.me/gallery/">摄影</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+        <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<script type="text/javascript" src="../jquery.js"></script>
+<style type="text/css">
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	overflow: hidden;
+}
+#textBox{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -999;
+}
+.showRoll #frame {
+    border-color: hsl(0,0%,70%);
+    position: absolute;
+}
+#box{
+	width: 641px;
+	height: 483px;
+	background: url(bg.jpg);
+	border: 1px solid #ddd;
+	position: relative;
+	color: #fff;
+	overflow: hidden;
+}
+#frame {
+    width: 70px;
+    height: 92px;
+    left:370px;
+    top:240px;
+    position: absolute;
+    border: 1px solid transparent;
+    background: url(mhxy.png) no-repeat left top;
+    -webkit-animation: anm-down 1s steps(8) infinite;
+       -moz-animation: anm-down 1s steps(8) infinite;
+        -ms-animation: anm-down 1s steps(8) infinite;
+         -o-animation: anm-down 1s steps(8) infinite;
+            animation: anm-down 1s steps(8) infinite;
+}
+@-webkit-keyframes anm-down { 0% { background-position: 0px 0; } 100% { background-position: -560px 0; } }
+   @-moz-keyframes anm-down { 0% { background-position: 0px 0; } 100% { background-position: -560px 0; } }
+    @-ms-keyframes anm-down { 0% { background-position: 0px 0; } 100% { background-position: -560px 0; } }
+     @-o-keyframes anm-down { 0% { background-position: 0px 0; } 100% { background-position: -560px 0; } }
+        @keyframes anm-down { 0% { background-position: 0px 0; } 100% { background-position: -560px 0; } }
 
+@-webkit-keyframes anm-left { 0% { background-position: 0px -92px; } 100% { background-position: -560px -92px; } }
+   @-moz-keyframes anm-left { 0% { background-position: 0px -92px; } 100% { background-position: -560px -92px; } }
+    @-ms-keyframes anm-left { 0% { background-position: 0px -92px; } 100% { background-position: -560px -92px; } }
+     @-o-keyframes anm-left { 0% { background-position: 0px -92px; } 100% { background-position: -560px -92px; } }
+        @keyframes anm-left { 0% { background-position: 0px -92px; } 100% { background-position: -560px -92px; } }
+
+@-webkit-keyframes anm-right { 0% { background-position: 0px -184px; } 100% { background-position: -560px -184px; } }
+   @-moz-keyframes anm-right { 0% { background-position: 0px -184px; } 100% { background-position: -560px -184px; } }
+    @-ms-keyframes anm-right { 0% { background-position: 0px -184px; } 100% { background-position: -560px -184px; } }
+     @-o-keyframes anm-right { 0% { background-position: 0px -184px; } 100% { background-position: -560px -184px; } }
+        @keyframes anm-right { 0% { background-position: 0px -184px; } 100% { background-position: -560px -184px; } }
+
+@-webkit-keyframes anm-up { 0% { background-position: 0px -276px; } 100% { background-position: -560px -276px; } }
+   @-moz-keyframes anm-up { 0% { background-position: 0px -276px; } 100% { background-position: -560px -276px; } }
+    @-ms-keyframes anm-up { 0% { background-position: 0px -276px; } 100% { background-position: -560px -276px; } }
+     @-o-keyframes anm-up { 0% { background-position: 0px -276px; } 100% { background-position: -560px -276px; } }
+        @keyframes anm-up { 0% { background-position: 0px -276px; } 100% { background-position: -560px -276px; } }
+
+@-webkit-keyframes anm-ld { 0% { background-position: 0px -368px; } 100% { background-position: -560px -368px; } }
+   @-moz-keyframes anm-ld { 0% { background-position: 0px -368px; } 100% { background-position: -560px -368px; } }
+    @-ms-keyframes anm-ld { 0% { background-position: 0px -368px; } 100% { background-position: -560px -368px; } }
+     @-o-keyframes anm-ld { 0% { background-position: 0px -368px; } 100% { background-position: -560px -368px; } }
+        @keyframes anm-ld { 0% { background-position: 0px -368px; } 100% { background-position: -560px -368px; } }
+
+@-webkit-keyframes anm-rd { 0% { background-position: 0px -460px; } 100% { background-position: -560px -460px; } }
+   @-moz-keyframes anm-rd { 0% { background-position: 0px -460px; } 100% { background-position: -560px -460px; } }
+    @-ms-keyframes anm-rd { 0% { background-position: 0px -460px; } 100% { background-position: -560px -460px; } }
+     @-o-keyframes anm-rd { 0% { background-position: 0px -460px; } 100% { background-position: -560px -460px; } }
+        @keyframes anm-rd { 0% { background-position: 0px -460px; } 100% { background-position: -560px -460px; } }
+
+@-webkit-keyframes anm-lu { 0% { background-position: 0px -552px; } 100% { background-position: -560px -552px; } }
+   @-moz-keyframes anm-lu { 0% { background-position: 0px -552px; } 100% { background-position: -560px -552px; } }
+    @-ms-keyframes anm-lu { 0% { background-position: 0px -552px; } 100% { background-position: -560px -552px; } }
+     @-o-keyframes anm-lu { 0% { background-position: 0px -552px; } 100% { background-position: -560px -552px; } }
+        @keyframes anm-lu { 0% { background-position: 0px -552px; } 100% { background-position: -560px -552px; } }
+
+@-webkit-keyframes anm-ru { 0% { background-position: 0px -644px; } 100% { background-position: -560px -644px; } }
+   @-moz-keyframes anm-ru { 0% { background-position: 0px -644px; } 100% { background-position: -560px -644px; } }
+    @-ms-keyframes anm-ru { 0% { background-position: 0px -644px; } 100% { background-position: -560px -644px; } }
+     @-o-keyframes anm-ru { 0% { background-position: 0px -644px; } 100% { background-position: -560px -644px; } }
+        @keyframes anm-ru { 0% { background-position: 0px -644px; } 100% { background-position: -560px -644px; } }
+
+</style>
+<title>test</title>
+</head>
+<body>
+	<div id="box">
+		<div id="frame"></div>
+		<input id="textBox" type="text">
+	</div>
+    
+    <script type="text/javascript">
+    	function setAnm (str){
+    		switch (str){
+    			case 'left':{
+    				$("#frame").css({"animation":"anm-left 1s steps(8) infinite"});
+    				break;
+    			}
+    			case 'right':{
+    				$("#frame").css({"animation":"anm-right 1s steps(8) infinite"});
+    				break;
+    			}
+    			case 'up':{
+    				$("#frame").css({"animation":"anm-up 1s steps(8) infinite"});
+    				break;
+    			}
+    			case 'down':{
+    				$("#frame").css({"animation":"anm-down 1s steps(8) infinite"});
+    				break;
+    			}
+    			case 'lu':{
+    				$("#frame").css({"animation":"anm-lu 1s steps(8) infinite"});
+    				break;
+    			}
+    			case 'ld':{
+    				$("#frame").css({"animation":"anm-ld 1s steps(8) infinite"});
+    				break;
+    			}
+    			case 'ru':{
+    				$("#frame").css({"animation":"anm-ru 1s steps(8) infinite"});
+    				break;
+    			}
+    			case 'rd':{
+    				$("#frame").css({"animation":"anm-rd 1s steps(8) infinite"});
+    				break;
+    			}
+    		}
+    	}
+    	var data = {
+    		x:0,
+    		y:0,
+    		l:false,
+    		r:false,
+    		u:false,
+    		d:false,
+    		time:null
+    	}
+    	function move(){
+    		trans = "translate("+data.x*50+"px,"+data.y*50+"px)";
+		  	$('#frame').css({"transform":trans,"transition":"all 0.3s linear"});
+    	}
+    	function diff(){
+    		var newTime = +new Date;
+			if(!data.time){
+				data.time = newTime;
+			}
+			var diff = newTime-data.time;
+			return diff;
+    	}
+		$(window).keydown(function(event){
+		  	var keycode = event.which;
+		  	if(keycode==37){
+		  		if(data.l) return;
+		  		var isRun = diff();
+		  		console.log(isRun);
+		  		data.l=true;
+		  		if(data.u){
+		  			setAnm("lu");
+		  			data.x--;
+		  			if(isRun>480)
+		  			data.y--;
+		  		}else if(data.d){
+		  			setAnm("ld");
+		  			data.x--;
+		  			if(isRun>480)
+		  			data.y++;
+		  		}else{
+		  			setAnm("left");
+			  		data.x--;
+		  		}
+		  	}else if(keycode==38){
+		  		if(data.u) return;
+		  		var isRun = diff();
+		  		console.log(isRun);
+		  		data.u=true;
+		  		if(data.l){
+		  			setAnm("lu");
+		  			if(isRun>480)
+		  			data.x--;
+		  			data.y--;
+		  		}else if(data.r){
+		  			setAnm("ru");
+		  			if(isRun>480)
+		  			data.x++;
+		  			data.y--;
+		  		}else{
+		  			setAnm("up");
+			  		data.y--;
+		  		}
+		  	}else if(keycode==39){
+		  		if(data.r) return;
+		  		var isRun = diff();
+		  		console.log(isRun);
+		  		data.r=true;
+		  		if(data.u){
+		  			setAnm("ru");
+		  			data.x++;
+		  			if(isRun>480)
+		  			data.y--;
+		  		}else if(data.d){
+		  			setAnm("rd");
+		  			data.x++;
+		  			if(isRun>480)
+		  			data.y++;
+		  		}else{
+		  			setAnm("right");
+			  		data.x++;
+		  		}
+		  	}else if(keycode==40){
+		  		if(data.d) return;
+		  		var isRun = diff();
+		  		console.log(isRun);
+		  		data.d=true;
+		  		if(data.l){
+		  			setAnm("ld");
+		  			if(isRun>480)
+		  			data.x--;
+		  			data.y++;
+		  		}else if(data.r){
+		  			setAnm("rd");
+		  			if(isRun>480)
+		  			data.x++;
+		  			data.y++;
+		  		}else{
+		  			setAnm("down");
+			  		data.y++;
+		  		}
+		  	}
+		  	move();
+		}).keyup(function(){
+			data.l = data.r = data.u = data.d = false;
+			data.time = null;
+		});
+    </script>
+</body>
+</html>
       
 
       
@@ -257,7 +474,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzUlEQVR42u3aS27DMAwFQN//0u42QGrnUZQUIxitCseQRl0Q5uc44nW+rNcn7+9c/Xq157Fi4eLitrnn7bp6J0HfX+N+//ezcHFx93PvA031nStKZ39cXNwnc5ODk1CIi4v7q9x71uMCGS4ubpFbDTQfUpRg5+W5Gi4uboObVynX/b2kvouLizvEPYsrL4zmzwun4+LibuFWG6LJBfJUqnouLi7uTm5e9Bwb1EguX02rcHFx13Hzz5QkKcoTp/zJP19kuLi4i7nJ8cmnTHL82DU+/FNwcXGXcfPgVR2n6A9oDuZquLi4De7c5kdOrxZSJ/RzcHFxa1WI8jhFXkbpBLuoYIqLi7uFmxyft0bG2qhR+oSLi7uFWw1JnXSolavh4uJu5OYpSt5G7QxsFUIYLi7uAu7YR8wYqPqkVcvBxcWdxM1DW791mrdVcHFxn8bNx7DyZm1r2AsXF3cxt1/QTJ5Xy7JH3sXFxcVdwK0Gl04ttpM+lS+Di4vb5lbTj6S0WqUk++Pi4u7n5i2NWUMVeRumXBbBxcX9EncsGOXjGq0qDi4u7nZu9c2xcHYpxMXF3cidNXBZDWp5uoWLi7uTO6FPGxc7xsqvuLi4G7l/C47iMXIsAkQAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwElEQVR42u3aQW7jQAwEwPz/01lgz7HcTc44u0DpZASyNKUAGrrJr6/4+P57JH//fjxeXeH5nOc1HDjw8PDwRkt/XtCr2+dntqR8PW+uhoeHh3eN9/wizm+Qv6Wf75U8xGjzwMPDw/tVXn5O/nlWUuPh4eH9j7zkZm0xvb8jHh4e3id5yY//+tJBgZ7EHB/KWvDw8PC6PlTRAPsXPl/s7+Hh4eEtuur5JpGf05bOq9Xi4eHhXeDlS5zdJh87uNdaw8PDw7vByxv2bfTQjmptSvw3V8PDw8O7wGtL5H1xfDaSiDYSPDw8vDVvVuwmL+vZK37THvvhmnh4eHgf4SXjUG2/Kd+XZo8y2uXw8PDwDvHacLYtnXN2Hn8k/4B6sgwPDw+v5M3GBdowYrMJrdpgeHh4eEd5+fjUHj9rjM1acXh4eHj3eLMf9rPxrHa5mwexyi3w8PDw1u/MPGjIi+lZkV1HwHh4eHjXeLN2VFJ2zxpXs5j4ZRiBh4eHd4HXlsWbbyWBbB6FRENXeHh4eEd5m20geXFvtoE8FokeHx4eHt5RXtv0yoexknB2NnRVxMp4eHh4F3izttZsFCB53SePpo2V8fDw8G7wkrK1jVzzYLcd29qMPuDh4eGd4tXBaNz+zwdhN2MHUYyLh4eH9xHerFDePKxNYR39YsDDw8Nb8NoQIQ8FNlvCrMj+4bt4eHh4l3n7KLaOUMuAox7hwsPDw7vAa8PQvPG/Kabbx1TEuHh4eHhr3qnhqpyUN8w2BfqbkhoPDw9vwTtV5s4K7nYkK2+S4eHh4d3m5ZtBfs6p5c5GuKLfAXh4eHhr3qkXcfuY2li53sbw8PDwfpXXwvYBbhtPrDYGPDw8vGu8WTjbFtltFPISiYeHh3eNtwkjkjGpWTmel+lvSmo8PDy8o7z93NZsaKBttuUbSX3g4eHhpbw/SHcNAfgWq7EAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,6 +504,23 @@ var _hmt = _hmt || [];
 </aside>
 
 
+
+  
+  
+  
+
+  
+  <div id="SOHUCS" sid="undefined" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>

@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://RichSuperMan.github.io">
-  <title>相册 | Litten的博客</title>
+  <title>instagram图片拉取小经验 | Litten的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://RichSuperMan.github.io/photos/index.html">
+  <meta name="description" content="最近喜欢上了instagram，分享一下获取照片的经验。">
+<meta name="keywords" content="web,经验,产品">
+<meta property="og:type" content="article">
+<meta property="og:title" content="instagram图片拉取小经验">
+<meta property="og:url" content="https://RichSuperMan.github.io/2014/03/03/instagram-api-ex/index.html">
 <meta property="og:site_name" content="Litten的博客">
-<meta property="og:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta property="og:description" content="最近喜欢上了instagram，分享一下获取照片的经验。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://richsuperman.github.io/assets/blogImg/instagram1.jpg">
+<meta property="og:image" content="https://richsuperman.github.io/assets/blogImg/instagram2.jpg">
 <meta property="og:updated_time" content="2017-07-28T03:51:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta name="twitter:title" content="instagram图片拉取小经验">
+<meta name="twitter:description" content="最近喜欢上了instagram，分享一下获取照片的经验。">
+<meta name="twitter:image" content="https://richsuperman.github.io/assets/blogImg/instagram1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
   
@@ -163,42 +166,46 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-instagram-api-ex" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      instagram图片拉取小经验
     </h1>
   
 
+        
+        <a href="/2014/03/03/instagram-api-ex/" class="archive-article-date">
+  	<time datetime="2014-03-03T14:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-03-03</time>
+</a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Ins</a>
-	<a class="photos-btn" target="_blank" href="http://litten.me/gallery/">摄影</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+        <p>最近喜欢上了instagram，分享一下获取照片的经验。<br><a id="more"></a></p>
+<p>###一、三“步”曲<br>instagram开放了API，授权遵循Oauth2.0协议。        </p>
+<p>####1、注册client id<br>到<a href="http://instagram.com/developer/clients/manage/" target="_blank" rel="noopener">管理客户端页面</a>，选择“注册新客户端”。<br>这时会提示你填手机号，接着会收到短信验证码。经过验证，就到达了下面的界面：<br><img src="/assets/blogImg/instagram1.jpg" alt="填写信息"><br>按照字面意思填写完毕，client id就注册完毕了。                 </p>
+<p><img src="/assets/blogImg/instagram2.jpg" alt="获得client_id">         </p>
+<p>####2、用client_id去换取token<br>在浏览器中请求：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//i</span>nstagram.com<span class="regexp">/oauth/</span>authorize<span class="regexp">/?client_id=&#123;CLIENT_ID&#125;&amp;redirect_uri=&#123;REDIRECT_URI&#125;&amp;response_type=token</span></span><br></pre></td></tr></table></figure></p>
+<p>花括号里面的值，对应上一步最终得到的<code>client_id</code>和自己设定的<code>redirect_uri</code>。<br>请求到的是一个授权页面，授权完毕后，则重定向到你的redirect_uri。注意看授权成功后的url，hash部分会附带给你的token。至此，token成功获取。</p>
+<p>####3、用token去调用API</p>
+<p>拿到token，就等于拿到仓库的钥匙了！<br>赶紧试着用token调用api查看自己的图片吧：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>api.instagram.com<span class="regexp">/v1/u</span>sers<span class="regexp">/&#123;USER_ID&#125;/m</span>edia<span class="regexp">/recent/</span>?access_token=&#123;TOKEN&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这时，你会发现似乎…被instagram api坑了一道。user_id是个啥？机智如我，果断填上了自己的用户名。<br>结果错了。</p>
+<p>后来发现有这个的网站：<a href="http://jelled.com/instagram/lookup-user-id" target="_blank" rel="noopener">lookup-user-id</a>，通过此业界良心，成功获取到user_id，摆平了上面的请求。</p>
+<p>###二、参考</p>
+<ol>
+<li>更多功能可参考<a href="http://instagram.com/developer/endpoints/users/" target="_blank" rel="noopener">api文档</a></li>
+<li>如果想了解Oauth授权，<a href="/blog/2013/08/20/oauth-rabbit/">点此</a></li>
+</ol>
+<p>###三、再说两句<br>图片分享的网站万万千，instagram却只有一个。我不是此产品的脑残粉，只是觉得社区氛围这种东西，可意会而不可言传，它是社交产品的灵魂。不是每个功能相近的产品都能营造的。</p>
+<p>事实上，instagram有很多限制，或者大家称之“功能不完善”的地方。比如，在pc上浏览网站，居然不能发图片，不能看自己关注的人，或者有哪些粉丝。这都限制死了，何以称为社交？但换个角度来想，这样就“强迫”用户去用手机操作instagram，因为产品最想想表达的，就是用摄影去快速记录生活，而已。</p>
+<p>不用拓展业务的噱头去损坏产品的思想表达，不刻意向老板汇报我们新增了多少用户量。</p>
+<p><strong>“你想做什么，你就会进入什么样的圈子”</strong>，这句话，不单单是对用户而言，每个创造者心中都应有这样的思考。</p>
+<p>the end.<br>litten 2014.3.3</p>
 
       
 
@@ -207,6 +214,25 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">经验</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">产品</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +283,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzUlEQVR42u3aS27DMAwFQN//0u42QGrnUZQUIxitCseQRl0Q5uc44nW+rNcn7+9c/Xq157Fi4eLitrnn7bp6J0HfX+N+//ezcHFx93PvA031nStKZ39cXNwnc5ODk1CIi4v7q9x71uMCGS4ubpFbDTQfUpRg5+W5Gi4uboObVynX/b2kvouLizvEPYsrL4zmzwun4+LibuFWG6LJBfJUqnouLi7uTm5e9Bwb1EguX02rcHFx13Hzz5QkKcoTp/zJP19kuLi4i7nJ8cmnTHL82DU+/FNwcXGXcfPgVR2n6A9oDuZquLi4De7c5kdOrxZSJ/RzcHFxa1WI8jhFXkbpBLuoYIqLi7uFmxyft0bG2qhR+oSLi7uFWw1JnXSolavh4uJu5OYpSt5G7QxsFUIYLi7uAu7YR8wYqPqkVcvBxcWdxM1DW791mrdVcHFxn8bNx7DyZm1r2AsXF3cxt1/QTJ5Xy7JH3sXFxcVdwK0Gl04ttpM+lS+Di4vb5lbTj6S0WqUk++Pi4u7n5i2NWUMVeRumXBbBxcX9EncsGOXjGq0qDi4u7nZu9c2xcHYpxMXF3cidNXBZDWp5uoWLi7uTO6FPGxc7xsqvuLi4G7l/C47iMXIsAkQAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3ay07AMAxE0f7/T5cNO4g1M04XcW5WCJU0p0iWH3keeb1/lv7M6vl6h+eLBQMGjGMZb7mUI9ZI5Xl3/3+oMGDAuICximCrZ1Yvc8O0+97l72HAgAGjPIQeOldsN62EAQMGjJohJWpRaQoDBgwYNcMNl9mBdn0yGDBg3MboFJZf//zJfAMGDBhHMV5z6QWn8nz/PL+7wYABYzRjV6qXIetBgn0tAwYMGKMZblLoNtfq8acSlDfkvDBgwBjEULbTm196063ThoMBA8ZshpvGdS5SZEme9IFgwIBxDUPfVAmaWREbngEGDBgXMPSEzC1Zs4TPbq7BgAHjMobS7ndbYErrLWu0LQMuDBgwBjH6L64LXbeFlw1QYcCAMZuhX9hyR5udItZOE2HAgDGaoVyG0MeWWSqpFLTSJ4YBA8ZQRtjekgcG+hWx1meCAQPGNYxXXnqa6O4TJo4wYMAYzdDLS71xn40Bsvac9D+BAQPGCIY+AHArRzd06u8KL17AgAHjWIaSwO0KjhleCvcwYMC4gJFt6r5ex9jtPxgwYFzG0Fv/bsjuX+8wylcYMGCMYLzm6pSd2SUz6coFDBgwRjOyYFf/PhsGZBfFbBgMGDCOZfSDrNtKa2Wy+p/BgAFjHCMLfJ3dsrTPmMHCgAEDhnzEL+pNGDBgwHDbahlSSUn1ZhwMGDBuYLgDSHf82YFtbrfBgAHjQEZWOu5toumFcWuoCQMGjPMYPyZ3S6ngmza2AAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,6 +295,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2014/03/30/volunteer-activities/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          小朋友，跟你谈谈印象派
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/22/thinner-than-1px-border/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">像素级细节：移动端1px border的实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -287,6 +332,23 @@ var _hmt = _hmt || [];
 </aside>
 
 
+
+  
+  
+  
+
+  
+  <div id="SOHUCS" sid="instagram-api-ex" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -309,7 +371,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

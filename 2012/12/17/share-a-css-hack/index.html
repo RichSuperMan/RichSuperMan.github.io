@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://RichSuperMan.github.io">
-  <title>相册 | Litten的博客</title>
+  <title>分享一个IE6，7的CSS hack bug | Litten的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://RichSuperMan.github.io/photos/index.html">
+  <meta name="description" content="###一、分享一个IE6，7的css hack bug。     IE和我们之间，肯定有一个是傻逼，如果它不是，那我们准是。不然很多事情没法解释…  ——多么痛的领悟">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分享一个IE6，7的CSS hack bug">
+<meta property="og:url" content="https://RichSuperMan.github.io/2012/12/17/share-a-css-hack/index.html">
 <meta property="og:site_name" content="Litten的博客">
-<meta property="og:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta property="og:description" content="###一、分享一个IE6，7的css hack bug。     IE和我们之间，肯定有一个是傻逼，如果它不是，那我们准是。不然很多事情没法解释…  ——多么痛的领悟">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://richsuperman.github.io/assets/blogImg/css_hack.jpg">
 <meta property="og:updated_time" content="2017-07-28T03:51:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta name="twitter:title" content="分享一个IE6，7的CSS hack bug">
+<meta name="twitter:description" content="###一、分享一个IE6，7的css hack bug。     IE和我们之间，肯定有一个是傻逼，如果它不是，那我们准是。不然很多事情没法解释…  ——多么痛的领悟">
+<meta name="twitter:image" content="https://richsuperman.github.io/assets/blogImg/css_hack.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
   
@@ -163,42 +165,45 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-share-a-css-hack" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      分享一个IE6，7的CSS hack bug
     </h1>
   
 
+        
+        <a href="/2012/12/17/share-a-css-hack/" class="archive-article-date">
+  	<time datetime="2012-12-17T11:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2012-12-17</time>
+</a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Ins</a>
-	<a class="photos-btn" target="_blank" href="http://litten.me/gallery/">摄影</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+        <p>###一、分享一个IE6，7的css hack bug。<br><img src="/assets/blogImg/css_hack.jpg" alt="css hack">   </p>
+<blockquote>
+<p>IE和我们之间，肯定有一个是傻逼，如果它不是，那我们准是。不然很多事情没法解释…  ——多么痛的领悟 </p>
+</blockquote>
+<a id="more"></a>
+<p>先看代码，或者点击看<a href="/assets/demo/hack_demo.html">demo</a><br>html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#main</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#main</span> <span class="selector-class">.box</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">margin-left</span>: <span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">	<span class="attribute">float</span>: left;</span><br><span class="line">	<span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#main</span> <span class="selector-class">.box</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">	<span class="attribute">z-index</span>: <span class="number">999</span>;</span><br><span class="line">	<span class="comment">/*background: #333;*/</span></span><br><span class="line">	<span class="comment">/*background: #999;*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>.box设置了的四行核心代码是：          </p>
+<ul>
+<li><code>float:left</code> - 左浮动         </li>
+<li><code>margin-left: 10px</code> - 左外边距为10px            </li>
+<li><code>position: relative</code> - 因为在box里面想用一个dom做绝对定位            </li>
+<li><code>background: #333</code> - 设置background颜色为#333<br>当.box触发hover时，做了一步z-index的改变，这时候在IE6，7中出现bug：因margin-left失效，.box会向左移动10px；而且这时候设置margin-left是不起作用的，hover结束后.box也不会回到原来的位置。</li>
+</ul>
+<p>###二、淡定解决异次元的bug</p>
+<p>诡异的事情最后水落石出：<strong>background属性居然影响了margin</strong>。</p>
+<p>将.box:hover多加一行background属性，比如：<code>background: #999</code>，这样子在IE上“看上去”就解决了。<br><strong>但是</strong>，就当你以为解决了bug的时候，如果.box:hover的background颜色设置与hover之前的颜色一样，也就是设置为<code>background: #333</code>，阴魂不散的bug又会重新出现啦。</p>
+<p>庆幸你的需求是background颜色不一样吧。如果还真是悲剧到要做成一样的颜色，解决的办法恐怕只能是取消.box的<code>position: relative</code>，然后多加一层dom容器了。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="box"&gt;</span><br><span class="line">	&lt;div style="position: relative"&gt;…&lt;/div&gt;</span><br><span class="line">	…</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>友情link：<a href="http://xueran.github.com/blog/2012/12/17/csstest-jiugongge/" target="_blank" rel="noopener">xueran的这篇文字</a>。</p>
 
       
 
@@ -207,6 +212,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +273,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzUlEQVR42u3aS27DMAwFQN//0u42QGrnUZQUIxitCseQRl0Q5uc44nW+rNcn7+9c/Xq157Fi4eLitrnn7bp6J0HfX+N+//ezcHFx93PvA031nStKZ39cXNwnc5ODk1CIi4v7q9x71uMCGS4ubpFbDTQfUpRg5+W5Gi4uboObVynX/b2kvouLizvEPYsrL4zmzwun4+LibuFWG6LJBfJUqnouLi7uTm5e9Bwb1EguX02rcHFx13Hzz5QkKcoTp/zJP19kuLi4i7nJ8cmnTHL82DU+/FNwcXGXcfPgVR2n6A9oDuZquLi4De7c5kdOrxZSJ/RzcHFxa1WI8jhFXkbpBLuoYIqLi7uFmxyft0bG2qhR+oSLi7uFWw1JnXSolavh4uJu5OYpSt5G7QxsFUIYLi7uAu7YR8wYqPqkVcvBxcWdxM1DW791mrdVcHFxn8bNx7DyZm1r2AsXF3cxt1/QTJ5Xy7JH3sXFxcVdwK0Gl04ttpM+lS+Di4vb5lbTj6S0WqUk++Pi4u7n5i2NWUMVeRumXBbBxcX9EncsGOXjGq0qDi4u7nZu9c2xcHYpxMXF3cidNXBZDWp5uoWLi7uTO6FPGxc7xsqvuLi4G7l/C47iMXIsAkQAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3aS5ICIRAFQO9/aecABj3vAS6E7JVhdAjJoqQ+r1f8vD+e/J3R+8+/8PrGg4GB8bOM9+OTbDFBjjbarjtcBQMD4wLGaMnRO6PF2jDdrjv8HgMDA2Nq00nwzT9jYGBgzDHa7bZJLAYGBkabxLYBMQnTc0eGgYFxG2Mlsfz256/0NzAwMH6K8S6fvFX5HGrz4l20KwwMjKMZeYCb23Sb+ubXPgwMjHsYu1oC7VbaZuc/MAwMjKMZ7SaSwLqeXW44UAwMjIMYu8rxScqatxDyvwQMDIzbGPkFri2ZJe+3MAwMjNsYbUtgrgzXNkeLxBgDA+MCxnpZLQ/cbaEtOgIMDIyjGXNRa24IYz0oRweNgYFxHKMdblgpsc1dOotpEQwMjIsZ+cJ5cpsH+mJmBAMD41BGnSIuXBbz30yGw4qkFwMD4yBGfplrGwZzp9i2VzEwME5lPIe2dmgsL9u1TzFsgYGBcRyjLau1xbj1Bmd7xcTAwDiVkQTcJJnME9Q8iS2upBgYGBcw2svfhoXjRkWU+mJgYFzAyLuB6yW5ojuRB24MDIxDGetBc2VUIi/MFT0NDAyM4xhzwa5drN1K22bAwMC4gbEyTtGmpjmjPm8MDIwLGHNXt5XQOXftKwYsMDAwrmckpfy9AxYYGBgYK4vl3+RNhXq8AwMD4wJGO2CRj0ckl8L8zQ3lNgwMjB9kzKWOc+X+vVdJDAyMCxh/dlVLqQFPW2gAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,6 +285,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2012/12/18/assassins-creed/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          记“刺客信条”三部曲：水月镜像，无心去来
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/12/16/theme-update1-dot-0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Blog主题更新-1.0</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -287,6 +322,23 @@ var _hmt = _hmt || [];
 </aside>
 
 
+
+  
+  
+  
+
+  
+  <div id="SOHUCS" sid="share-a-css-hack" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -309,7 +361,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

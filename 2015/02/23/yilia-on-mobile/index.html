@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://RichSuperMan.github.io">
-  <title>相册 | Litten的博客</title>
+  <title>hexo主题Yilia在移动端适配的一些事 | Litten的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://RichSuperMan.github.io/photos/index.html">
+  <meta name="description" content="Yilia是我去年9月开发的主题，本来只是想给自己玩，因而开始有许多“任性”的设计。诸如“我本可以兼容ie，但我就不”这种…结果star数越来越多，半年里，居然成为了搜索“hexo-theme”最多star数的主题。感慨大家跟我一样任性的同时，也是受宠若惊，万分感谢！ 而年前的主要矛盾，是日益增多的star和fork数，与功能还未完善之间的矛盾；以及越来越多的bug被大家发现，与我忙得飞起只好假装">
+<meta name="keywords" content="主题,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo主题Yilia在移动端适配的一些事">
+<meta property="og:url" content="https://RichSuperMan.github.io/2015/02/23/yilia-on-mobile/index.html">
 <meta property="og:site_name" content="Litten的博客">
-<meta property="og:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta property="og:description" content="Yilia是我去年9月开发的主题，本来只是想给自己玩，因而开始有许多“任性”的设计。诸如“我本可以兼容ie，但我就不”这种…结果star数越来越多，半年里，居然成为了搜索“hexo-theme”最多star数的主题。感慨大家跟我一样任性的同时，也是受宠若惊，万分感谢！ 而年前的主要矛盾，是日益增多的star和fork数，与功能还未完善之间的矛盾；以及越来越多的bug被大家发现，与我忙得飞起只好假装">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-07-28T03:51:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta name="twitter:title" content="hexo主题Yilia在移动端适配的一些事">
+<meta name="twitter:description" content="Yilia是我去年9月开发的主题，本来只是想给自己玩，因而开始有许多“任性”的设计。诸如“我本可以兼容ie，但我就不”这种…结果star数越来越多，半年里，居然成为了搜索“hexo-theme”最多star数的主题。感慨大家跟我一样任性的同时，也是受宠若惊，万分感谢！ 而年前的主要矛盾，是日益增多的star和fork数，与功能还未完善之间的矛盾；以及越来越多的bug被大家发现，与我忙得飞起只好假装">
   
     <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
   
@@ -163,42 +163,45 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-yilia-on-mobile" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      hexo主题Yilia在移动端适配的一些事
     </h1>
   
 
+        
+        <a href="/2015/02/23/yilia-on-mobile/" class="archive-article-date">
+  	<time datetime="2015-02-23T04:58:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-02-23</time>
+</a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Ins</a>
-	<a class="photos-btn" target="_blank" href="http://litten.me/gallery/">摄影</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+        <p><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">Yilia</a>是我去年9月开发的主题，本来只是想给自己玩，因而开始有许多“任性”的设计。诸如“我本可以兼容ie，但我就不”这种…<br>结果star数越来越多，半年里，居然成为了搜索“hexo-theme”最多star数的主题。<br>感慨大家跟我一样任性的同时，也是受宠若惊，万分感谢！</p>
+<p>而年前的主要矛盾，是日益增多的star和fork数，与功能还未完善之间的矛盾；以及越来越多的bug被大家发现，与我忙得飞起只好假装没发现这些bug的矛盾…</p>
+<p>默默放下抢红包的手机，还是决定先把关于hexo最想解决的三件事之一：移动端适配给做了。</p>
+<a id="more"></a>
+<p>##三件事</p>
+<p>话说这三件事一直有放在心上，是使用hexo时还不够满意的地方。<br><br>             </p>
+<ol>
+<li><strong>移动端适配。</strong>就很多主题来看，响应式布局就等同于移动端适配，这是远远不足够的。布局影响的仅仅是视觉，还必须有特有的交互逻辑，以适应大家的操作习惯。</li>
+<li><strong>seo。</strong>hexo的seo还比较弱，description需要支持文章自定义比较稳妥，而把标签云塞到keyword里面去是个好想法。</li>
+<li><strong>模块化加载。</strong>把fancybox，jiathis，duoshuo这些给延迟加载，移动端和pc端js分离。就瀑布图来看，是有信心提速20%-30%的。<br><br></li>
+</ol>
+<p>##移动端适配</p>
+<p>关于适配着重在这些方面：</p>
+<ul>
+<li>滚动时视觉感官上的流畅性</li>
+<li>便于单手操作</li>
+<li>次要信息在左侧边栏的收纳管理</li>
+</ul>
+<video controls autoplay name="media"><source src="/assets/video/yilia-mobile.mp4" type="video/mp4"></video>
 
       
 
@@ -207,6 +210,21 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">主题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +275,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzUlEQVR42u3aS27DMAwFQN//0u42QGrnUZQUIxitCseQRl0Q5uc44nW+rNcn7+9c/Xq157Fi4eLitrnn7bp6J0HfX+N+//ezcHFx93PvA031nStKZ39cXNwnc5ODk1CIi4v7q9x71uMCGS4ubpFbDTQfUpRg5+W5Gi4uboObVynX/b2kvouLizvEPYsrL4zmzwun4+LibuFWG6LJBfJUqnouLi7uTm5e9Bwb1EguX02rcHFx13Hzz5QkKcoTp/zJP19kuLi4i7nJ8cmnTHL82DU+/FNwcXGXcfPgVR2n6A9oDuZquLi4De7c5kdOrxZSJ/RzcHFxa1WI8jhFXkbpBLuoYIqLi7uFmxyft0bG2qhR+oSLi7uFWw1JnXSolavh4uJu5OYpSt5G7QxsFUIYLi7uAu7YR8wYqPqkVcvBxcWdxM1DW791mrdVcHFxn8bNx7DyZm1r2AsXF3cxt1/QTJ5Xy7JH3sXFxcVdwK0Gl04ttpM+lS+Di4vb5lbTj6S0WqUk++Pi4u7n5i2NWUMVeRumXBbBxcX9EncsGOXjGq0qDi4u7nZu9c2xcHYpxMXF3cidNXBZDWp5uoWLi7uTO6FPGxc7xsqvuLi4G7l/C47iMXIsAkQAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aUbLCIAwFUPe/ad8GLN4kfc4UTr86WguHj5gEXq/4ei+vqyeTd/Z+27wwMDAey0immHxeHSX5Nl8+DAyMExjrgLie6NWTXwZeht18bhgYGBg5Y/38Okwn9xgYGBhVRj6JarDGwMDAmBSxvXCckH5ai2NgYDyQkXfdf3//L/sbGBgYj2K8i9c6gUva/XkaWpgVBgbG1oxeYjdvnN11UAMDA+MExmTrMf9VMt3kKEYzb8XAwHg4I0/j8i3JCaC30BgYGBjVknWybVD9HAMD4wRG0iDrbUAmxW15pa9miIGBcQCjWsreu4OavOFLOY2BgbE1ozpAtZStlrXViUbPY2BgPJxRDbh5cVtt+ifbD5fLioGBsTWjeqgi34CcFLE3pIkYGBgbMfIJ9Y525QXqqDzGwMA4gJEDJocw8iK2WjBjYGCcw+jlkjk7b6uVD2dgYGAcwOgFuySB6zXv8vbch64hBgbGdoxqMtdrmfUWZR2CPzyJgYFxACN/Xa+hVg2jZR4GBsYBjCSZ6x2eSIrSfLOh8L+BgYGxNSMfuBc0e6N8adhhYGBsyri37ZW3/ieBvrB+GBgYWzB6wW6S2M15oz8GDAyMxzKSoNk7cpG3/idsDAyMcxiT1K16FGPeksPAwMBIAmWv9K2OHh2zwMDAwIjbYfO2Wp5cXhaxGBgYWzOShC/p2xVCZHGD4bZ2GwYGxgMZvdKxmg4mieZkqwADA2NTxh9K6kHPuu3cyQAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,6 +287,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2015/04/28/img-lazy-load/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          说到加载图片，我们可以谈些什么
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/21/guide-for-zb/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IT圈装逼速成指南</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -287,6 +324,23 @@ var _hmt = _hmt || [];
 </aside>
 
 
+
+  
+  
+  
+
+  
+  <div id="SOHUCS" sid="yilia-on-mobile" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -309,7 +363,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

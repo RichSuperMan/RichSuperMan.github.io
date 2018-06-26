@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://RichSuperMan.github.io">
-  <title>相册 | Litten的博客</title>
+  <title>网易“聚合阅读”布局的实现 | Litten的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://RichSuperMan.github.io/photos/index.html">
+  <meta name="description" content="网易聚合阅读的出现的确让人惊艳了一下。流畅的交互,使碎片化的新闻资讯像报纸一样摊在眼前,这是信息大爆炸的时代产物。不管你能不能接受这种新阅读形式，事实上，每天越来越多的新闻层出不穷，还没被人看到就已成为了“旧闻”。回归报纸的版面设计，堆叠新闻模块，让用户告别一条接一条整齐的新闻链接，而是在一个版面上提供更多的信息，不失为一种尝试。 而抛去产品的层面，从前端方向来看，“聚合阅读”也有许多值得">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网易“聚合阅读”布局的实现">
+<meta property="og:url" content="https://RichSuperMan.github.io/2013/05/03/my-news-reader-box/index.html">
 <meta property="og:site_name" content="Litten的博客">
-<meta property="og:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta property="og:description" content="网易聚合阅读的出现的确让人惊艳了一下。流畅的交互,使碎片化的新闻资讯像报纸一样摊在眼前,这是信息大爆炸的时代产物。不管你能不能接受这种新阅读形式，事实上，每天越来越多的新闻层出不穷，还没被人看到就已成为了“旧闻”。回归报纸的版面设计，堆叠新闻模块，让用户告别一条接一条整齐的新闻链接，而是在一个版面上提供更多的信息，不失为一种尝试。 而抛去产品的层面，从前端方向来看，“聚合阅读”也有许多值得">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://richsuperman.github.io/assets/blogImg/myReader0.jpg">
 <meta property="og:updated_time" content="2017-07-28T03:51:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta name="twitter:title" content="网易“聚合阅读”布局的实现">
+<meta name="twitter:description" content="网易聚合阅读的出现的确让人惊艳了一下。流畅的交互,使碎片化的新闻资讯像报纸一样摊在眼前,这是信息大爆炸的时代产物。不管你能不能接受这种新阅读形式，事实上，每天越来越多的新闻层出不穷，还没被人看到就已成为了“旧闻”。回归报纸的版面设计，堆叠新闻模块，让用户告别一条接一条整齐的新闻链接，而是在一个版面上提供更多的信息，不失为一种尝试。 而抛去产品的层面，从前端方向来看，“聚合阅读”也有许多值得">
+<meta name="twitter:image" content="https://richsuperman.github.io/assets/blogImg/myReader0.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
   
@@ -163,42 +165,55 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-my-news-reader-box" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      网易“聚合阅读”布局的实现
     </h1>
   
 
+        
+        <a href="/2013/05/03/my-news-reader-box/" class="archive-article-date">
+  	<time datetime="2013-05-03T02:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2013-05-03</time>
+</a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Ins</a>
-	<a class="photos-btn" target="_blank" href="http://litten.me/gallery/">摄影</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+        <p><img src="/assets/blogImg/myReader0.jpg" alt="聚合阅读">   </p>
+<p>网易<a href="http://news.tag.163.com/" target="_blank" rel="noopener">聚合阅读</a>的出现的确让人惊艳了一下。流畅的交互,使碎片化的新闻资讯像报纸一样摊在眼前,这是信息大爆炸的时代产物。不管你能不能接受这种新阅读形式，事实上，每天越来越多的新闻层出不穷，还没被人看到就已成为了“旧闻”。回归报纸的版面设计，堆叠新闻模块，让用户告别一条接一条整齐的新闻链接，而是在一个版面上提供更多的信息，不失为一种尝试。</p>
+<p>而抛去产品的层面，从前端方向来看，“聚合阅读”也有许多值得学习的地方。这几天研究了一下源码，谈谈它随机布局的实现，以及一些优化的措施。</p>
+<p>##<strong>demo</strong></p>
+<p>点击按钮可以改变布局：<br><a id="more"></a></p>
+<iframe id="demoIframe" src="/assets/demo/my_news_reader/index.html" width="600" height="420" scrolling="no"></iframe>
+
+<p>##<strong>一.怎样定义格子对象</strong></p>
+<p>每个格子对象，都至少应该有这5个属性：   </p>
+<ul>
+<li>left：距离左边界的位置         </li>
+<li>top：距离上边界的位置           </li>
+<li>width：格子宽度             </li>
+<li>height：格子高度            </li>
+<li>background：格子颜色        </li>
+</ul>
+<p>逐个去定义对象无疑是愚蠢的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Block</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span>&#123;</span><br><span class="line">		left: o.left,</span><br><span class="line">		top: o.top,</span><br><span class="line">		width: o.width,</span><br><span class="line">		height: o.height,</span><br><span class="line">		bg: o.bg</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> block1 = <span class="keyword">new</span> Block(&#123;</span><br><span class="line">	left: <span class="number">0</span>,</span><br><span class="line">	top: <span class="number">0</span>,</span><br><span class="line">	width: <span class="number">50</span>,</span><br><span class="line">	height: <span class="number">50</span>,</span><br><span class="line">	bg: <span class="string">"#3f3"</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> block2 = …</span><br><span class="line">…</span><br><span class="line"><span class="keyword">var</span> block37 = …</span><br></pre></td></tr></table></figure></p>
+<p>这样不仅不利于后期维护，而且构造格子的嵌套关系也相对麻烦。</p>
+<p>网易的做法是使用“交替切割”的方式来做：         </p>
+<ol>
+<li>将大块先切成两列。         </li>
+<li>左列（红色部分）再切成三行，右列（褐，黄，蓝部分）也切成三行。</li>
+<li>对形成的6个小块，再进行列的切割</li>
+</ol>
+<p>整个做法就是“列-行-列-行-……”这样的交替切割。所以它的对象是这样设置的,其中random属性可以约定同级的cols或rows是否可以随机变换位置，width和height的值是规定一个父级块的分割比例。其设置的形式例如（例子与demo的设定无关）：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.tagConfig.pageLayout = &#123;</span><br><span class="line">	top: <span class="number">0</span>,</span><br><span class="line">	left: <span class="number">0</span>,</span><br><span class="line">	width: <span class="number">100</span>,</span><br><span class="line">	height: <span class="number">100</span>,</span><br><span class="line">	random: !<span class="number">1</span>,</span><br><span class="line">	cols: [&#123;</span><br><span class="line">		width: <span class="number">30</span>,</span><br><span class="line">		rows: [&#123;</span><br><span class="line">			height: <span class="number">40</span>,</span><br><span class="line">			cols: [&#123;</span><br><span class="line">				width: <span class="number">30</span>,</span><br><span class="line">				rows:[&#123;</span><br><span class="line">					height:<span class="number">100</span></span><br><span class="line">				&#125;]</span><br><span class="line">			&#125;,&#123;</span><br><span class="line">				width: <span class="number">70</span>,</span><br><span class="line">				rows:[&#123;</span><br><span class="line">					height:<span class="number">100</span></span><br><span class="line">				&#125;]</span><br><span class="line">			&#125;]</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			height: <span class="number">30</span></span><br><span class="line">		&#125;,&#123;</span><br><span class="line">			height: <span class="number">30</span></span><br><span class="line">		&#125;]</span><br><span class="line">	&#125;,&#123;</span><br><span class="line">		width: <span class="number">70</span>,</span><br><span class="line">		rows:[&#123;</span><br><span class="line">			height:<span class="number">100</span></span><br><span class="line">		&#125;]</span><br><span class="line">	&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##<strong>二.递归调用切割函数</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_getGrids</span>(<span class="params">tag</span>) </span>&#123;</span><br><span class="line">	<span class="comment">/*domArr是拥有left,top,width,height,bg等属性的所有dom数组，_getGrids的最终目的就是生成这个数组*/</span></span><br><span class="line">	<span class="keyword">var</span> domArr = [],</span><br><span class="line">	_cutGrid(tag.pageLayout,</span><br><span class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">tag</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (tag.rows || tag.cols) &#123;</span><br><span class="line">				<span class="comment">/*假如子级存在rows或者cols，则递归切割*/</span></span><br><span class="line">				_cutGrid(tag, <span class="built_in">arguments</span>.callee);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">/*子级不存在rows或者cols，不再进行切割，构造domArr*/</span></span><br><span class="line">				…</span><br><span class="line">				domArr.push(xxx)</span><br><span class="line">				…</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	);</span><br><span class="line">	<span class="keyword">return</span> domArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##<strong>三.切割函数</strong></p>
+<p>切割函数挺有意思的，下次想再用一篇文章来详细写一下，在这里仅贴出参考的源码。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*对象复制函数*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_shadowClone</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> t = &#123;&#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> n <span class="keyword">in</span> e) e.hasOwnProperty(n) &amp;&amp; (t[n] = e[n]);</span><br><span class="line">	<span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*判断子块随机布局与否*/</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">ranOrNot</span>(<span class="params">e, t</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> n = [];</span><br><span class="line">		<span class="keyword">typeof</span> t == <span class="string">"undefined"</span> &amp;&amp; (t = e, e = <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span> (; e &lt; t; e++) n.push(e);</span><br><span class="line">		<span class="keyword">return</span> n</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*随机布局*/</span></span><br><span class="line">	<span class="built_in">Array</span>.prototype.randomEach = <span class="function"><span class="keyword">function</span>(<span class="params">t</span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> t != <span class="string">"function"</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>;</span><br><span class="line">		<span class="keyword">var</span> n = <span class="keyword">this</span>.length,</span><br><span class="line">		r = ranOrNot(n);</span><br><span class="line">		<span class="keyword">while</span> (n) &#123;</span><br><span class="line">			<span class="keyword">var</span> i = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * n--);</span><br><span class="line">			<span class="keyword">if</span> (t(<span class="keyword">this</span>[r[i]]) === !<span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">			r[i] = r[n]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">/*常规布局*/</span></span><br><span class="line">	<span class="built_in">Array</span>.prototype.forEach || (<span class="built_in">Array</span>.prototype.forEach = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> t = <span class="keyword">this</span>.length;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> e != <span class="string">"function"</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>;</span><br><span class="line">		<span class="keyword">var</span> n = <span class="built_in">arguments</span>[<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> r = <span class="number">0</span>; r &lt; t; r++) r <span class="keyword">in</span> <span class="keyword">this</span> &amp;&amp; e.call(n, <span class="keyword">this</span>[r], r, <span class="keyword">this</span>)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125; )();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*切割函数*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_cutGrid</span>(<span class="params">tag, funcJudge</span>) </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">h</span>(<span class="params">cutLength</span>) </span>&#123;</span><br><span class="line">			<span class="comment">/*复制子块对象并计算出子块top,left*/</span></span><br><span class="line">			<span class="keyword">var</span> u, a = _shadowClone(cutLength);</span><br><span class="line">			c++,</span><br><span class="line">			u = c === l ? tag[cutType2.measure] - s: <span class="built_in">Math</span>.floor(cutLength[cutType2.measure] * tag[cutType2.measure] / <span class="number">100</span>),</span><br><span class="line">			a[cutType1.offset] = i + tag[cutType1.offset],</span><br><span class="line">			a[cutType2.offset] = s + tag[cutType2.offset],</span><br><span class="line">			a[cutType1.measure] = f,</span><br><span class="line">			a[cutType2.measure] = u,</span><br><span class="line">			a.colorPattern = tag.colorPattern,</span><br><span class="line">			<span class="comment">/*判断小块是否还需要分割*/</span></span><br><span class="line">			funcJudge(a),</span><br><span class="line">			s += u</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> f, l = a[cutType2.name].length,</span><br><span class="line">		c = <span class="number">0</span>;</span><br><span class="line">		u++,</span><br><span class="line">		f = u === cutLength ? tag[cutType1.measure] - i: <span class="built_in">Math</span>.floor(a[cutType1.measure] * tag[cutType1.measure] / <span class="number">100</span>),</span><br><span class="line">		a.random === !<span class="number">1</span> ? a[cutType2.name].forEach(h) : a[cutType2.name].randomEach(h),</span><br><span class="line">		s = <span class="number">0</span>,</span><br><span class="line">		i += f</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*根据大块是否有rows属性，定义两种切割方式*/</span></span><br><span class="line">	<span class="keyword">var</span> cutType1, cutType2;</span><br><span class="line">	tag.rows ? (cutType1 = &#123;</span><br><span class="line">		name: <span class="string">"rows"</span>,</span><br><span class="line">		measure: <span class="string">"height"</span>,</span><br><span class="line">		offset: <span class="string">"top"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	cutType2 = &#123;</span><br><span class="line">		name: <span class="string">"cols"</span>,</span><br><span class="line">		measure: <span class="string">"width"</span>,</span><br><span class="line">		offset: <span class="string">"left"</span></span><br><span class="line">	&#125;) : (cutType1 = &#123;</span><br><span class="line">		name: <span class="string">"cols"</span>,</span><br><span class="line">		measure: <span class="string">"width"</span>,</span><br><span class="line">		offset: <span class="string">"left"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	cutType2 = &#123;</span><br><span class="line">		name: <span class="string">"rows"</span>,</span><br><span class="line">		measure: <span class="string">"height"</span>,</span><br><span class="line">		offset: <span class="string">"top"</span></span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">var</span> i = <span class="number">0</span>,</span><br><span class="line">	s = <span class="number">0</span>,</span><br><span class="line">	cutLength = tag[cutType1.name].length,</span><br><span class="line">	u = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">/*是否随机布局*/</span></span><br><span class="line">	tag.random === !<span class="number">1</span> ? tag[cutType1.name].forEach(a) : tag[cutType1.name].randomEach(a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##<strong>四.最后</strong><br>完成到这一步，我已不记得声明对象时出了多少次错误。各种尖括号，方括号，逗号和分号翩翩起舞时，你一定跟我一样很想念coffee的语法糖…</p>
 
       
 
@@ -207,6 +222,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +283,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzUlEQVR42u3aS27DMAwFQN//0u42QGrnUZQUIxitCseQRl0Q5uc44nW+rNcn7+9c/Xq157Fi4eLitrnn7bp6J0HfX+N+//ezcHFx93PvA031nStKZ39cXNwnc5ODk1CIi4v7q9x71uMCGS4ubpFbDTQfUpRg5+W5Gi4uboObVynX/b2kvouLizvEPYsrL4zmzwun4+LibuFWG6LJBfJUqnouLi7uTm5e9Bwb1EguX02rcHFx13Hzz5QkKcoTp/zJP19kuLi4i7nJ8cmnTHL82DU+/FNwcXGXcfPgVR2n6A9oDuZquLi4De7c5kdOrxZSJ/RzcHFxa1WI8jhFXkbpBLuoYIqLi7uFmxyft0bG2qhR+oSLi7uFWw1JnXSolavh4uJu5OYpSt5G7QxsFUIYLi7uAu7YR8wYqPqkVcvBxcWdxM1DW791mrdVcHFxn8bNx7DyZm1r2AsXF3cxt1/QTJ5Xy7JH3sXFxcVdwK0Gl04ttpM+lS+Di4vb5lbTj6S0WqUk++Pi4u7n5i2NWUMVeRumXBbBxcX9EncsGOXjGq0qDi4u7nZu9c2xcHYpxMXF3cidNXBZDWp5uoWLi7uTO6FPGxc7xsqvuLi4G7l/C47iMXIsAkQAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3ay27CMBAF0Pz/T9NtK1B6x+MI2T5ZoRKID4vpvK4rvl6/rve/39/5fk/+2ckXBgbGsozX7XV/z/1B39+9/zny5354IgYGxgGM5PGzDpdEzmqwxsDAwEgOkQfl5F0MDAyMDiM/YhJqk1COgYGBkRexCb6aPn6hFsfAwFiQ0Sksn379yHwDAwNjKcareOUpXTVNzIPsh2/DwMDYmtFppeVHz0l52oeBgXEOo98OS36nfHUsD+5XVY+BgbEsY+7Ycqy6nDWcwMDAOIeRHDEZZ1bXWwujSgwMjIMZeejsFLdj31a4BwMD40hGktINJm1xMjrtvwQGBsaCjDyl67T1c3Z1VPBnMICBgbEpoxoE5wblKqMc1jEwMLZg5GXnGKMasgcbbRgYGAcwkodVB5D5oe8D8eDOCAYGxnaMsQWsPGiOtfsLxTAGBsYBjLHQWW3MVZPCQuKIgYGxNSNfZagWqGOzxU4DDgMD42RGP1zm6xd5i60ccDEwMBZnJAOAvNH2RBEbteEwMDAOZoytSvTZ1YUzDAyMExhPJHx5QTthFIGBgbEpY2y1Yqx9lpev5WCNgYGxNaMT7PoNtfuC9omQjYGBsS5jbJ2if6zqpsRV/RgGBsZ2jE4JGrXDOpPV4DsxMDAwOsOAwlGqwwAMDAyMOAXsjweS1t4/PxYGBsYBjKSITdYykkiYYx5pt2FgYCzI6PeyqiPPuSEbAwNja8YPMQzbGT5sbNsAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,6 +295,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2013/08/11/brief-oauth/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          谈谈OAuth1,OAuth2异同
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/04/30/my-fairy-tale1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">失眠故事一【裁缝的工具】【天气精灵】【匠人与万能胶水】</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -287,6 +332,23 @@ var _hmt = _hmt || [];
 </aside>
 
 
+
+  
+  
+  
+
+  
+  <div id="SOHUCS" sid="my-news-reader-box" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -309,7 +371,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

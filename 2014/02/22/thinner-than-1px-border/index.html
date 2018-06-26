@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://RichSuperMan.github.io">
-  <title>相册 | Litten的博客</title>
+  <title>像素级细节：移动端1px border的实现 | Litten的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://RichSuperMan.github.io/photos/index.html">
+  <meta name="description" content="请记住，每个尽责的设计师都是处女座…  这里…没有黑处女座的意思，只是想借题发挥，并由衷的跪倒在强大的“像素眼”之下。">
+<meta name="keywords" content="html5,css3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像素级细节：移动端1px border的实现">
+<meta property="og:url" content="https://RichSuperMan.github.io/2014/02/22/thinner-than-1px-border/index.html">
 <meta property="og:site_name" content="Litten的博客">
-<meta property="og:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta property="og:description" content="请记住，每个尽责的设计师都是处女座…  这里…没有黑处女座的意思，只是想借题发挥，并由衷的跪倒在强大的“像素眼”之下。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://richsuperman.github.io/assets/blogImg/border1px.jpg">
 <meta property="og:updated_time" content="2017-07-28T03:51:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta name="twitter:title" content="像素级细节：移动端1px border的实现">
+<meta name="twitter:description" content="请记住，每个尽责的设计师都是处女座…  这里…没有黑处女座的意思，只是想借题发挥，并由衷的跪倒在强大的“像素眼”之下。">
+<meta name="twitter:image" content="https://richsuperman.github.io/assets/blogImg/border1px.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
   
@@ -163,42 +165,48 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-thinner-than-1px-border" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      像素级细节：移动端1px border的实现
     </h1>
   
 
+        
+        <a href="/2014/02/22/thinner-than-1px-border/" class="archive-article-date">
+  	<time datetime="2014-02-22T12:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-02-22</time>
+</a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Ins</a>
-	<a class="photos-btn" target="_blank" href="http://litten.me/gallery/">摄影</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+        <blockquote>
+<p>请记住，每个尽责的设计师都是处女座…</p>
+</blockquote>
+<p>这里…没有黑处女座的意思，只是想借题发挥，并由衷的跪倒在强大的“像素眼”之下。<br><a id="more"></a></p>
+<p>###一、你是我的眼</p>
+<p>什么是像素眼？<br>就是那些个神奇的存在，他们用余光瞄了你一眼，然后跟你说：我发现啊，你左边眉毛比右边眉毛高了1像素，麻烦你调整下…</p>
+<p>在腾讯，我身边的许多设计同学都有这样的眼睛。他们会把细节做到极致，也会因为频繁的修改，把你开发的心情搞得一团糟。但你得承认，他们是对的。</p>
+<p>最近在做移动端web开发，按着设计图，toby已在我旁边核对修改了两个多小时。当我觉得已经万事大吉时，toby跟我说，还是觉得不太对——边框好像有点粗？</p>
+<p>当时我就傻眼了，因为这已是最细的边框，电脑上清楚的显示，我已经设置了1px的border。于是我去解释，并建议更换个色值，让边框至少“看起来”更细。而toby却不接受，按他给我的说法是：这border看起来不性感…</p>
+<p>原来这世界的审美观，都是以瘦为美，从女人到一根线？于是乎，为了寻找性感的border，搜集一堆资料后还真找到了方案：</p>
+<ul>
+<li><strong>父元素设置</strong>：scale(0.5,0.5)                 </li>
+<li><strong>子元素设置</strong>：scale(2,2) 还原缩放，origin都是基于左上角（0,0）/left top</li>
+</ul>
+<p>这样父元素的border其实被缩放了，无疑更细。</p>
+<p>###二、通用方案</p>
+<p>用一个css类去为block元素添加更细的border<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border-1px</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  &amp;:before, &amp;:after&#123;</span><br><span class="line">    <span class="selector-tag">border-top</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#c8c7cc</span>;</span><br><span class="line">    content: ' ';</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">block</span>;</span><br><span class="line">    <span class="selector-tag">width</span>: 100%;</span><br><span class="line">    <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">    <span class="selector-tag">left</span>: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;<span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;<span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>适应移动设备：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>), (min-device-pixel-ratio: <span class="number">1.5</span>)&#123;</span><br><span class="line">  <span class="selector-class">.border-1px</span>&#123;</span><br><span class="line">    &amp;::after, &amp;::before&#123;</span><br><span class="line">      <span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">scaleY</span>(<span class="selector-class">.7</span>);</span><br><span class="line">      <span class="selector-tag">-webkit-transform-origin</span>: 0 0;</span><br><span class="line">      <span class="selector-tag">transform</span>: <span class="selector-tag">scaleY</span>(<span class="selector-class">.7</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">      <span class="attribute">-webkit-transform-origin</span>: left bottom;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (-webkit-min-device-pixel-ratio:<span class="number">2</span>), (min-device-pixel-ratio: <span class="number">2</span>)&#123;</span><br><span class="line">  <span class="selector-class">.border-1px</span>&#123;</span><br><span class="line">    &amp;::after, &amp;::before&#123;</span><br><span class="line">      <span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">scaleY</span>(<span class="selector-class">.5</span>);</span><br><span class="line">      <span class="selector-tag">transform</span>: <span class="selector-tag">scaleY</span>(<span class="selector-class">.5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###三、来个对比</p>
+<p>比如，之前我学日语时，自己搞起了个app，这是50音列表界面，可以明显的看出区别：上图是原生方案，下图是…性感方案<br><img src="/assets/blogImg/border1px.jpg" alt="与原生方案对比">      </p>
+<p>源码小demo，注意要在手机上才能看到效果：<a href="/assets/demo/border1px.html">demo</a>。</p>
+<p>The End.<br>——litten 2.22 <em>“写轮眼？弱爆了啊 ←_←”</em></p>
 
       
 
@@ -207,6 +215,21 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">css3</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +280,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzUlEQVR42u3aS27DMAwFQN//0u42QGrnUZQUIxitCseQRl0Q5uc44nW+rNcn7+9c/Xq157Fi4eLitrnn7bp6J0HfX+N+//ezcHFx93PvA031nStKZ39cXNwnc5ODk1CIi4v7q9x71uMCGS4ubpFbDTQfUpRg5+W5Gi4uboObVynX/b2kvouLizvEPYsrL4zmzwun4+LibuFWG6LJBfJUqnouLi7uTm5e9Bwb1EguX02rcHFx13Hzz5QkKcoTp/zJP19kuLi4i7nJ8cmnTHL82DU+/FNwcXGXcfPgVR2n6A9oDuZquLi4De7c5kdOrxZSJ/RzcHFxa1WI8jhFXkbpBLuoYIqLi7uFmxyft0bG2qhR+oSLi7uFWw1JnXSolavh4uJu5OYpSt5G7QxsFUIYLi7uAu7YR8wYqPqkVcvBxcWdxM1DW791mrdVcHFxn8bNx7DyZm1r2AsXF3cxt1/QTJ5Xy7JH3sXFxcVdwK0Gl04ttpM+lS+Di4vb5lbTj6S0WqUk++Pi4u7n5i2NWUMVeRumXBbBxcX9EncsGOXjGq0qDi4u7nZu9c2xcHYpxMXF3cidNXBZDWp5uoWLi7uTO6FPGxc7xsqvuLi4G7l/C47iMXIsAkQAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aQW7DMAwEwPz/0+21QGtnSYpJCoxPhpvaGgWQnCUfj/j4ujjuP3n/v73jsXHg4eHhHRr61RDzKz+v/z6vXsmnDA8PD+81vKsVtTrE6hKfT9D9GC6v4+Hh4X0YL5+C/DP3mxYeHh7e/+VVY4Le4CbTh4eHh7fN67349uLdJNR4Q9aCh4eHt1BF+pzzlfoeHh4e3riqfr/gzreHZNuYNB/g4eHhbfB6cWq1NFVtSkg2p8I48fDw8I7y8iaAPPatBg1J2NG8Gx4eHt4ar/eDPw9PJ0FtNcYtPxgPDw+vVd+vFq7yxbpalEqecuA7xMPDwxvwJgtxHlXk4UJvOppVOzw8PLxDvGShz4deLXf1NqEn9T08PDy8o7z7BbraxVQNdqsRbfKswv6Dh4eH1+L1WgGqMcR8A6hOOh4eHt5reL0l/lTrwOS4fCIeHh7eAm8SJUw2ksnGM9lC8PDw8E7xqo1TyWz1QtjJS3z0XeHh4eEd4uWLbLWUlUcPvVg5mXo8PDy8s7zJg6shbH6HSbvVH1kLHh4e3gLvVBiRhxT5+aSohoeHh7fHqw43GVxemsq3h/Jf8fDw8BZ4vWH1Ytxe1jqPmPHw8PA2eL0S13zQk0hiVOXDw8PDO8rLi1vJsHqv4MmzyiEyHh4e3lHeJK7tFat6U7beboWHh4dX5CULcTU46EUJvc8/ab3Cw8PDW+P1lvjefZL/PdCMhYeHh3eU91U8kuW+eodRW9X9ROPh4eEt8HpFrB44P69uQpPiHB4eHl6Ply/l9+FFNZJ40caAh4eHt8arLujJoHsFs96m9SSSwMPDw3srbxLaTrafZlsDHh4e3sfw8raDZBFPJqvQLoCHh4f3El41CEhao5Lwonr/akiBh4eHt8Gr/uA/Fd1OXppX6nt4eHh4z3nfo3WSl2gvlu4AAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,6 +292,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2014/03/03/instagram-api-ex/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          instagram图片拉取小经验
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/12/about-pjax/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pjax: 当ajax遇上pushState</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -287,6 +329,23 @@ var _hmt = _hmt || [];
 </aside>
 
 
+
+  
+  
+  
+
+  
+  <div id="SOHUCS" sid="thinner-than-1px-border" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -309,7 +368,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

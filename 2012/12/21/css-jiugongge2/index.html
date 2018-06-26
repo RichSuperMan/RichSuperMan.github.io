@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://RichSuperMan.github.io">
-  <title>相册 | Litten的博客</title>
+  <title>css实现九宫格(二) | Litten的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://RichSuperMan.github.io/photos/index.html">
+  <meta name="description" content="书接上回，上回在这。  9个元素，每个50*50px，排成九宫格默认是border颜色为blue，hover到格子上变成red（兼容到IE6）        题目的关键是解决“公用边”，上次我主要做了两个方面的尝试：  用负margin使元素的border叠加用table的border-collapse实现边框合并  这一次的思路则更加简明，也是个人认为是更好的方法。感谢队长提供的思路。">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css实现九宫格(二)">
+<meta property="og:url" content="https://RichSuperMan.github.io/2012/12/21/css-jiugongge2/index.html">
 <meta property="og:site_name" content="Litten的博客">
-<meta property="og:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta property="og:description" content="书接上回，上回在这。  9个元素，每个50*50px，排成九宫格默认是border颜色为blue，hover到格子上变成red（兼容到IE6）        题目的关键是解决“公用边”，上次我主要做了两个方面的尝试：  用负margin使元素的border叠加用table的border-collapse实现边框合并  这一次的思路则更加简明，也是个人认为是更好的方法。感谢队长提供的思路。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://richsuperman.github.io/assets/blogImg/jiugongge1.jpg">
+<meta property="og:image" content="https://richsuperman.github.io/assets/blogImg/jiugongge10.jpg">
+<meta property="og:image" content="https://richsuperman.github.io/assets/blogImg/jiugongge9.jpg">
 <meta property="og:updated_time" content="2017-07-28T03:51:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta name="twitter:title" content="css实现九宫格(二)">
+<meta name="twitter:description" content="书接上回，上回在这。  9个元素，每个50*50px，排成九宫格默认是border颜色为blue，hover到格子上变成red（兼容到IE6）        题目的关键是解决“公用边”，上次我主要做了两个方面的尝试：  用负margin使元素的border叠加用table的border-collapse实现边框合并  这一次的思路则更加简明，也是个人认为是更好的方法。感谢队长提供的思路。">
+<meta name="twitter:image" content="https://richsuperman.github.io/assets/blogImg/jiugongge1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
   
@@ -163,42 +167,50 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-css-jiugongge2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      css实现九宫格(二)
     </h1>
   
 
+        
+        <a href="/2012/12/21/css-jiugongge2/" class="archive-article-date">
+  	<time datetime="2012-12-21T05:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2012-12-21</time>
+</a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Ins</a>
-	<a class="photos-btn" target="_blank" href="http://litten.me/gallery/">摄影</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+        <p>书接上回，<a href="http://litten.github.com/2012/12/14/css-jiugongge/" target="_blank" rel="noopener">上回在这</a>。</p>
+<blockquote>
+<p>9个元素，每个50*50px，排成九宫格<br>默认是border颜色为blue，hover到格子上变成red（兼容到IE6）</p>
+</blockquote>
+<p><img src="/assets/blogImg/jiugongge1.jpg" alt="css题目">     </p>
+<p>题目的关键是解决“公用边”，上次我主要做了两个方面的尝试：</p>
+<blockquote>
+<p>用负margin使元素的border叠加<br>用table的border-collapse实现边框合并</p>
+</blockquote>
+<p>这一次的思路则更加简明，也是个人认为是更好的方法。感谢<a href="http://weibo.com/u/1666828424" target="_blank" rel="noopener">队长</a>提供的思路。</p>
+<a id="more"></a>
+<p>##<strong>能不能不用border？</strong><br><img src="/assets/blogImg/jiugongge10.jpg" alt="一个格子的透视图，a其实充当了div的“边框”"><br>如果不用border，怎么实现hover后，格子四周变红呢？那肯定是两个dom嵌套在一起，一大一小，小的dom作为“格子”，大的dom作为格子的红色“边框”。先看我初始化的一个格子设定：<br>html：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>初始css:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">	<span class="selector-id">#test</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">		<span class="attribute">text-align</span>:center;</span><br><span class="line">		<span class="attribute">background</span>: <span class="number">#AAA</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-id">#test</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">55px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">55px</span>;</span><br><span class="line">		<span class="attribute">float</span>: left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-id">#test</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">		<span class="attribute">background</span>: red;</span><br><span class="line">	&#125;</span><br><span class="line">```<span class="selector-tag">css</span></span><br><span class="line">由于<span class="selector-tag">a</span>标签设置了宽度为55<span class="selector-tag">px</span>，<span class="selector-tag">div</span>标签设置了宽度为50<span class="selector-tag">px</span>，这时候格子<span class="selector-tag">hover</span>看起来只露出了**右边**的5<span class="selector-tag">px</span>红色部分。          </span><br><span class="line"></span><br><span class="line">接下来，div添加属性&lt;code&gt;margin-top:5px;margin-right:5px&lt;/code&gt;，这时可以显示**上部**的5px边框。再接着，在div的容器，也就是a标签设置&lt;code&gt;padding-left:5px;padding-bottom:5px;&lt;/code&gt;，使格子**左边框**和**下边框**都显示出来。</span><br><span class="line"></span><br><span class="line">![完成一个格子的设置步骤](/assets/blogImg/jiugongge8.jpg)      </span><br><span class="line"></span><br><span class="line">那么为什么要将<span class="selector-tag">a</span>标签设置为55<span class="selector-tag">px</span>，再进行一系列关于<span class="selector-tag">margin</span>和<span class="selector-tag">padding</span>的设置呢，原因我们最后再说。</span><br><span class="line"></span><br><span class="line">因此修改后的<span class="selector-tag">css</span>为：</span><br><span class="line">```<span class="selector-tag">css</span></span><br><span class="line">	<span class="selector-id">#test</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">		<span class="attribute">text-align</span>:center;</span><br><span class="line">		<span class="attribute">background</span>: <span class="number">#AAA</span>;</span><br><span class="line">		<span class="attribute">margin-right</span>:<span class="number">5px</span>;</span><br><span class="line">		<span class="attribute">margin-top</span>:<span class="number">5px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-id">#test</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">55px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">55px</span>;</span><br><span class="line">		<span class="attribute">float</span>: left;</span><br><span class="line">		<span class="attribute">margin-right</span>: -<span class="number">5px</span>;</span><br><span class="line">		<span class="attribute">margin-bottom</span>: -<span class="number">5px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-id">#test</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">		<span class="attribute">background</span>: red;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##<strong>九个格子会怎样？</strong><br>将a标签左浮动，同时添加到九个格子，这时候的效果是：两个格子之间会有10px的距离。</p>
+<p>为解决“公用边”问题，在a标签添加负值的margin：<code>margin-right:-5px;margin-bottom:-5px;</code>。最后将最外层的容器#test的宽度和高度设置为170px(50<em>3+5</em>4)，背景设置为蓝色。这时候大功告成了。</p>
+<p><img src="/assets/blogImg/jiugongge9.jpg" alt="完成九个格子的设置步骤">      </p>
+<p>最终的代码是：<br>html：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>7<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>8<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>9<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#test</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">170px</span>;</span><br><span class="line">	<span class="attribute">height</span>:<span class="number">170px</span>;</span><br><span class="line">	<span class="attribute">background</span>: blue;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#test</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">text-align</span>:center;</span><br><span class="line">	<span class="attribute">background</span>: <span class="number">#AAA</span>;</span><br><span class="line">	<span class="attribute">margin-right</span>:<span class="number">5px</span>;<span class="comment">/*这句不要也可以*/</span></span><br><span class="line">	<span class="attribute">margin-top</span>:<span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#test</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">55px</span>;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">55px</span>;</span><br><span class="line">	<span class="attribute">float</span>: left;</span><br><span class="line">	<span class="attribute">text-decoration</span>: none;</span><br><span class="line">	<span class="attribute">padding-left</span>: <span class="number">5px</span>;</span><br><span class="line">	<span class="attribute">padding-bottom</span>: <span class="number">5px</span>;</span><br><span class="line">	<span class="attribute">margin-right</span>: -<span class="number">5px</span>;</span><br><span class="line">	<span class="attribute">margin-bottom</span>: -<span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#test</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">	<span class="attribute">background</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##<strong>巧妙在哪里？</strong></p>
+<ul>
+<li>a标签hover前不设置背景色，露出最外层#test的蓝色背景，看起来格子有蓝色的边框；a标签hover时背景色设置为红色，充当了格子的红色边框；       </li>
+<li>a标签设置为55px是最关键的一点。按照此思路和题目要求，格子是50px大小，边框的dom应该是60px大小。而此时a设置为55px，因为a要设置<code>padding-left:5px;padding-bottom:5px;</code>，刚好a就有60px大小了；而a里面的div要设置<code>margin-top:5px;margin-right:5px</code>（其实margin-right也可以不加）,这时候margin和padding就达到了一个“中和”的效果，使布局不发生偏差。</li>
+</ul>
+<p>点此看<a href="/assets/demo/jiugongge_demo2.html">demo</a>。</p>
 
       
 
@@ -207,6 +219,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +280,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzUlEQVR42u3aS27DMAwFQN//0u42QGrnUZQUIxitCseQRl0Q5uc44nW+rNcn7+9c/Xq157Fi4eLitrnn7bp6J0HfX+N+//ezcHFx93PvA031nStKZ39cXNwnc5ODk1CIi4v7q9x71uMCGS4ubpFbDTQfUpRg5+W5Gi4uboObVynX/b2kvouLizvEPYsrL4zmzwun4+LibuFWG6LJBfJUqnouLi7uTm5e9Bwb1EguX02rcHFx13Hzz5QkKcoTp/zJP19kuLi4i7nJ8cmnTHL82DU+/FNwcXGXcfPgVR2n6A9oDuZquLi4De7c5kdOrxZSJ/RzcHFxa1WI8jhFXkbpBLuoYIqLi7uFmxyft0bG2qhR+oSLi7uFWw1JnXSolavh4uJu5OYpSt5G7QxsFUIYLi7uAu7YR8wYqPqkVcvBxcWdxM1DW791mrdVcHFxn8bNx7DyZm1r2AsXF3cxt1/QTJ5Xy7JH3sXFxcVdwK0Gl04ttpM+lS+Di4vb5lbTj6S0WqUk++Pi4u7n5i2NWUMVeRumXBbBxcX9EncsGOXjGq0qDi4u7nZu9c2xcHYpxMXF3cidNXBZDWp5uoWLi7uTO6FPGxc7xsqvuLi4G7l/C47iMXIsAkQAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aSXKDQBAEQP3/0/YDbKBqWhwYkpNCJjQkh3Zvn098/fy5jr4/uqc95XPHhYGB8VhG/ij51Z4yeU0YGBjvYRwdnATNo59OeGvnYmBgYEwYSYLYBlwMDAyMOSMPoMkpGBgYGJMi9vz+82Qxv//2WhwDA+OBjElheffnW+YbGBgYj2JMmvVJeF0bTNZPhYGBsTUjD3DJgyZJ3lriGI0iMDAwtmYkza+8KTYJ0Ocl7iiTxcDAeDgjOeb8zslLWRtORP83MDAwNmKshdq1tK8dc55/j4GB8U5GEhBzTL5UkZey9TwWAwPj4Yzkh9qBQTuMTO4vmmsYGBjbMdbCXJvM5a23tjv4Ty2OgYGxHaNdrWgfIn9BawNUDAyM9zDmI4G1z3nRW2+LYGBgbMRoC9d56Zunm20xjIGB8QZGW/u2KV0yEF0bTmBgYOzNSBYgJotfk/Bd9wsxMDA2ZcwXub41BkiWOS7+ioGBsTVjrTXWJpTJYGA+QMXAwNiVMW+QtQXqpOV3iMHAwHgZo22HtSsaa+nmRbmLgYHxAsZk2SIvU5Pgm48Zos4fBgbGwxnfbeW3Abdtt13U3xgYGJsy5sGuDaNtKM+bgBgYGHsz1oLsZCFjlMm2O2gYGBgbMdrjJ8ncJO2LZrAYGBgYS6XspN7EwMDAmLTDkmQub6vlv3BYxGJgYGzNaNcp8iFoPlTIC2kMDIy3MdrSMW+Z5U20yXgAAwNja8Yvqw5Bz4jGuh8AAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,6 +292,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2012/12/24/coffee-pc/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          生产者-消费者模型的coffeescript实现
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/12/19/a-chrismas-ico/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">圣诞到了，帮修改一个头像</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -287,6 +329,23 @@ var _hmt = _hmt || [];
 </aside>
 
 
+
+  
+  
+  
+
+  
+  <div id="SOHUCS" sid="css-jiugongge2" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -309,7 +368,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

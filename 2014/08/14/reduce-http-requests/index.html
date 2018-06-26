@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://RichSuperMan.github.io">
-  <title>相册 | Litten的博客</title>
+  <title>再议减少HTTP请求 | Litten的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://RichSuperMan.github.io/photos/index.html">
+  <meta name="description" content="最近参加了IMWEB前端技术沙龙活动，有幸能站到讲台上，将性能方面的经验与大家分享。现将“再议减少HTTP请求”部分简单摘剪成文。">
+<meta name="keywords" content="html5,前端,性能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="再议减少HTTP请求">
+<meta property="og:url" content="https://RichSuperMan.github.io/2014/08/14/reduce-http-requests/index.html">
 <meta property="og:site_name" content="Litten的博客">
-<meta property="og:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta property="og:description" content="最近参加了IMWEB前端技术沙龙活动，有幸能站到讲台上，将性能方面的经验与大家分享。现将“再议减少HTTP请求”部分简单摘剪成文。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://richsuperman.github.io/assets/blogImg/reduce-http.jpg">
 <meta property="og:updated_time" content="2017-07-28T03:51:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="Ins 	摄影   	图片来自instagram，正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChi">
+<meta name="twitter:title" content="再议减少HTTP请求">
+<meta name="twitter:description" content="最近参加了IMWEB前端技术沙龙活动，有幸能站到讲台上，将性能方面的经验与大家分享。现将“再议减少HTTP请求”部分简单摘剪成文。">
+<meta name="twitter:image" content="https://richsuperman.github.io/assets/blogImg/reduce-http.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Litten的博客" type="application/atom+xml">
   
@@ -163,42 +165,70 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-reduce-http-requests" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      再议减少HTTP请求
     </h1>
   
 
+        
+        <a href="/2014/08/14/reduce-http-requests/" class="archive-article-date">
+  	<time datetime="2014-08-14T05:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-08-14</time>
+</a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Ins</a>
-	<a class="photos-btn" target="_blank" href="http://litten.me/gallery/">摄影</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/litten225/" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+        <p><img src="/assets/blogImg/reduce-http.jpg" alt="沙龙分享">       </p>
+<blockquote>
+<p>最近参加了IMWEB前端技术沙龙活动，有幸能站到讲台上，将性能方面的经验与大家分享。现将“再议减少HTTP请求”部分简单摘剪成文。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h3><p>关于web性能，有两个著名论断：              </p>
+<ol>
+<li><strong>0.1-0.2s 用户认为是即时的；1-5s 用户觉得自己能与信息流畅地交互；5-10s 用户开始转移注意力</strong>——Robert Miller                               </li>
+<li><strong>用户所接受的数据，有80~90%的时间都耗在前端上</strong>——Steve Souders</li>
+</ol>
+<p>前者说明，loading图（以下简称菊花）是必要的。人处于“开始转移注意力”时，这朵菊花就开始挽留你躁动的心。但web工程师的一个使命，就是通过提升性能，不让用户看到菊花。菊花要有，但不能常有，真是一朵磨人的小妖精…</p>
+<p>后者说明，资源的加载和渲染可以大做文章。因为一个html文件，几乎是所有资源的承载器，哪些优先加载，怎样加载，都是前端工程师可以控制的。</p>
+<h3 id="再议减少HTTP请求："><a href="#再议减少HTTP请求：" class="headerlink" title="再议减少HTTP请求："></a>再议减少HTTP请求：</h3><p>“尽量减少HTTP请求，减少DNS查找”这是Yslow写在最前面的两条规则。而放之实际，可能会遇到挑战。为何？因为我们完成了“降低请求数”的目标，但可能损失了其他方面的指标。</p>
+<p><strong>a. 没有浏览器缓存</strong><br>减少HTTP请求，很常用的做法就是把js和css资源inline到html里。这样的做法，自然没有浏览器缓存，重复加载时连静态资源也必须加载。也许有人又说，我可以把整个html文件都缓存啊！的确可以，但以web开发的更新速度，html文件一般都不设或设置很短时间（5 min?）缓存。另外在web2.0时代里，html缓存会带来不必要的问题。比如登录前后，页面资源展示不一样，那么我们就得慎用html缓存。</p>
+<p><strong>b. 没有cdn缓存</strong><br>这个很好理解，任何的内联资源，由于依赖于html，都必须从源服务器而不是cdn服务器返回。</p>
+<p><strong>c. 不能按需加载</strong><br>为了按需加载，前端工程师可谓想法各异，天马行空。比如图片的lazyload技术，异步加载js脚本，而inline的方式恰恰将一切想法摁回脑中。</p>
+<p><strong>d. 浏览器预解析DNS失效</strong><br>现代浏览器有预解析DNS技术。简单来说，就是页面下载到浏览器时，先扫描一遍，在这时发现域名并预解析DNS。这样的前置解析跟dom渲染等操作同步执行，诚然会使浏览器更快。但如果你的html页面因为内联了太多内容（base64图片），大于5M时，浏览器的预解析DNS将会失效。</p>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><p>因而，我们时常像那只捡芝麻丢西瓜的熊。如此平衡这两者呢，业界给我们两个很好的案例。</p>
+<p><strong>Demo1 必应</strong>               </p>
+<blockquote>
+<ol>
+<li>首次内联CSS与JS<ol start="2">
+<li>将资源取出，并保存在localStorage中</li>
+<li>资源名（版本）保存在cookie中</li>
+<li>后续请求中，服务器检查对应的cookie</li>
+<li>根据cookie的值，只嵌入新的脚本</li>
+<li>加载时，从localStorage里载入资源</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p><strong>Demo2 百度(移动端)</strong>               </p>
+<blockquote>
+<ol>
+<li>首次将静态资源打包，用jsonp统一返回<ol start="2">
+<li>将资源解析并保存在localStorage中</li>
+<li>再次访问时检查localStorage中资源情况</li>
+<li>如有缺失再发请求获取资源</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>必应的做法确保了首次的http请求最少，后续充分发挥增量更新（当然粒度还是文件）的优势提高性能，但缺点是cookie并不可靠。百度则是把首次静态资源的http请求降低到一次，非常暴力的把全部css，js打包成字符串，以jsonp返回。宁愿用str转obj的解析时间去换取加载时间。而随V8引擎的强大，这点解析的时间也将越来越不值得提起。总而言之，这两个Demo都把http请求尽可能的降低，而后都利用了本地存储去获得资源。              </p>
+<p>我有时候会想起那把由无名的铁匠用三个小时粗制而成的小李飞刀。<br>你得对技术怀敬畏之心。因为那些谁都懂的技术，在某些人的手里，还真能变出花儿来。</p>
 
       
 
@@ -207,6 +237,25 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">性能</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +306,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzUlEQVR42u3aS27DMAwFQN//0u42QGrnUZQUIxitCseQRl0Q5uc44nW+rNcn7+9c/Xq157Fi4eLitrnn7bp6J0HfX+N+//ezcHFx93PvA031nStKZ39cXNwnc5ODk1CIi4v7q9x71uMCGS4ubpFbDTQfUpRg5+W5Gi4uboObVynX/b2kvouLizvEPYsrL4zmzwun4+LibuFWG6LJBfJUqnouLi7uTm5e9Bwb1EguX02rcHFx13Hzz5QkKcoTp/zJP19kuLi4i7nJ8cmnTHL82DU+/FNwcXGXcfPgVR2n6A9oDuZquLi4De7c5kdOrxZSJ/RzcHFxa1WI8jhFXkbpBLuoYIqLi7uFmxyft0bG2qhR+oSLi7uFWw1JnXSolavh4uJu5OYpSt5G7QxsFUIYLi7uAu7YR8wYqPqkVcvBxcWdxM1DW791mrdVcHFxn8bNx7DyZm1r2AsXF3cxt1/QTJ5Xy7JH3sXFxcVdwK0Gl04ttpM+lS+Di4vb5lbTj6S0WqUk++Pi4u7n5i2NWUMVeRumXBbBxcX9EncsGOXjGq0qDi4u7nZu9c2xcHYpxMXF3cidNXBZDWp5uoWLi7uTO6FPGxc7xsqvuLi4G7l/C47iMXIsAkQAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3a0WrDMAwF0P3/T2+wp8GW9Eqy2g5OnkpoEp8ULPXaHx/x8fl9/D7z8/zvM/fX3p9JxnDswMPDw2sN/eq4+k4+3PvPyRPza/94BXh4eHhrvPuJ+P5h97Nxbw5PilBUPPDw8PBeykv61Y1BV8eDh4eH9194SVGZAPDw8PDejZdEAxPYJCZOwpEDWQseHh5ezKsugL3D58X1PTw8PLzBqno1aMi3EST3PDBaPDw8vAVeMsTq4/OtBvm2gMniGR4eHt5ZXnWazrde9YrE2eAYDw8P7zm8vBgk0Wovrs1f1oNR4eHh4a3x8jIwKR55bFFdNrtU4OHh4a3xelNzsih1Ks7I7xDlvnh4eHgDXi9EqMYN+VXJyyovreHh4eEd5U1g1ca31y5Xn4iHh4e3zcv/2FeLxDyiTe5feH14eHh4T+Tl4UWv4Z4Ex+VIAg8PD2/M6w3uVAg7b+gfFA88PDy8Nd78b39vKNWNWcnTL/eU4eHh4S3w8uAguap35IFIFE/g4eHhLfDyJai8Le4106eWuwovGg8PD+8Qr9r+JvFEslmq90Kr4S8eHh7enNdsRuNIIi8AeRjR3FOGh4eHd3R2Tf7qR7FpK3pIIo9qyFuoTnh4eHgDXr4toNfmJueTsLhMxcPDw1vg9bYF5OFFHuwmy1rV0oWHh4d3lpfctDdZV9n5L1AoIXh4eHhP4eWkakTbWwartvuXAS4eHh7eId48dJgsns0b+nIkgYeHhzfmfRaP6iB6xaPKvrwPHh4e3gJvY5l/DqhuvSqn1Hh4eHhjXjVu6H0nb9ZzRtTW4+Hh4a3xqsUgzznyslGOZZN4Ag8PD++lvEkznefKvfs8WOXDw8PDewPeJFyoTvfVEBkPDw/vObxe0JAPtxpGTJ6Ih4eHt83bm5qrhSQPOJKGGw8PD2+B9wU88qZLNUp29AAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,6 +318,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2014/08/20/three-drama/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          三台戏
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/08/01/kael-qrcode-info/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">爱上一匹二维马可我家里没有草原…</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -287,6 +355,23 @@ var _hmt = _hmt || [];
 </aside>
 
 
+
+  
+  
+  
+
+  
+  <div id="SOHUCS" sid="reduce-http-requests" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -309,7 +394,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
